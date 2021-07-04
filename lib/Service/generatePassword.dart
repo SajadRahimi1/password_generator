@@ -1,4 +1,3 @@
-import 'dart:io';
 import 'dart:math';
 
 String generatePassword(bool _isWithLetters, bool _isWithUppercase,
@@ -7,7 +6,7 @@ String generatePassword(bool _isWithLetters, bool _isWithUppercase,
   String _lowerCaseLetters = "abcdefghijklmnopqrstuvwxyz";
   String _upperCaseLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   String _numbers = "0123456789";
-  String _special = "@#=+!£\$%&?[](){}";
+  String _special = "@#=+!\$%&?";
 
   //Create the empty string that will contain the allowed chars
   String _allowedChars = "";

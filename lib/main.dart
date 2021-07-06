@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
 class Home extends StatelessWidget {
   CustomeCard _customeCard1 = CustomeCard();
   CustomeCard _customeCard2 = CustomeCard();
-  bool lower = true, upper = false, special = false, number = false;
+  bool lower = false, upper = false, special = false, number = false;
   CustomeCard _customeCard3 = CustomeCard();
   CustomeCard _customeCard4 = CustomeCard();
   var _lengh = 1.obs;
@@ -276,11 +276,17 @@ class Home extends StatelessWidget {
                                   duration: Duration(seconds: 2),
                                   isDismissible: true,
                                   titleText: Text(
-                                    "کپی",
+                                    _pass ==
+                                            "شما باید حداقل یکی از ویژگی ها را انتخاب کنید"
+                                        ? ""
+                                        : "$_pass",
                                     textAlign: TextAlign.right,
                                   ),
                                   messageText: Text(
-                                    "رمز ساخته شده کپی شد",
+                                    _pass ==
+                                            "شما باید حداقل یکی از ویژگی ها را انتخاب کنید"
+                                        ? "شما باید حداقل یکی از ویژگی ها را انتخاب کنید"
+                                        : "رمز ساخته شده کپی شد",
                                     textAlign: TextAlign.right,
                                   ),
                                   icon: Icon(Icons.copy),

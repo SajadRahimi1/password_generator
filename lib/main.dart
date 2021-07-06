@@ -30,10 +30,6 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: Color(0xff264653),
-        appBar: AppBar(
-          backgroundColor: Color(0xff264653),
-          elevation: 10,
-        ),
         body: Column(
           children: [
             Container(
@@ -130,7 +126,7 @@ class Home extends StatelessWidget {
             Container(
                 margin: EdgeInsets.only(right: 15, left: 15),
                 width: Get.width,
-                height: Get.height / 6,
+                height: Get.height / 5.8,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(15),
                   color: Color(0xff2a9d8f),
@@ -254,7 +250,7 @@ class Home extends StatelessWidget {
                 ],
               ),
             ),
-            SizedBox(
+            Container(
               height: Get.height / 10,
               width: Get.width,
               child: FloatingActionButton(
@@ -274,6 +270,21 @@ class Home extends StatelessWidget {
                         IconButton(
                             onPressed: () {
                               Clipboard.setData(ClipboardData(text: _pass));
+                              Get.back();
+                              Get.snackbar("", "",
+                                  backgroundColor: Colors.white,
+                                  duration: Duration(seconds: 2),
+                                  isDismissible: true,
+                                  titleText: Text(
+                                    "کپی",
+                                    textAlign: TextAlign.right,
+                                  ),
+                                  messageText: Text(
+                                    "رمز ساخته شده کپی شد",
+                                    textAlign: TextAlign.right,
+                                  ),
+                                  icon: Icon(Icons.copy),
+                                  snackPosition: SnackPosition.BOTTOM);
                             },
                             icon: Icon(Icons.copy))
                       ]);
@@ -290,7 +301,7 @@ class Home extends StatelessWidget {
                       topRight: Radius.circular(Get.width / 6)),
                 ),
               ),
-            )
+            ),
           ],
         ));
   }
